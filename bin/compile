@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Run the webpack-rails rake task.
+bundle exec webpack:compile

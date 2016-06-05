@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Assume this project uses webpack-rails gem if it exposes the
+# "webpack:compile" Rake task.
+#
+# `grep` will set significant the exit code accordingly.
+bundle exec rake -T | grep webpack:compile
