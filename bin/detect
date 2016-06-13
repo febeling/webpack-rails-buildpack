@@ -1,4 +1,5 @@
 #!/bin/sh
+# -*- shell-script -*-
 
 # Assume this project uses webpack-rails gem if it exposes the
 # "webpack:compile" Rake task.
