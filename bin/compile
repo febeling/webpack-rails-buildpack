@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
 # Run the webpack-rails rake task.
+build_dir=$1
+cd $build_dir
 bundle exec webpack:compile
