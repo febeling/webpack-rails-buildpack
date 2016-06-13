@@ -3,5 +3,10 @@
 
 # Run the webpack-rails rake task.
 build_dir=$1
+cache_dir=$2
+env_dir=$3
+
+echo `ls -al $env_dir`
+
 cd $build_dir
 bundle exec rake webpack:compile
