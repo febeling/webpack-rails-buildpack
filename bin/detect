@@ -5,6 +5,6 @@
 #
 # `grep` will set the significant exit code accordingly.
 
-echo "webpack-rail-buildpack detection..."
+echo "webpack-rails"
 
 exit 0
