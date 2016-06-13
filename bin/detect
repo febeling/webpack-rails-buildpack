@@ -7,4 +7,4 @@
 
 echo "webpack-rail-buildpack detection..."
 
-bundle exec rake -T | grep webpack:compile
+exit 0
