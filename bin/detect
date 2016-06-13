@@ -3,5 +3,8 @@
 # Assume this project uses webpack-rails gem if it exposes the
 # "webpack:compile" Rake task.
 #
-# `grep` will set significant the exit code accordingly.
+# `grep` will set the significant exit code accordingly.
+
+echo "webpack-rail-buildpack detection..."
+
 bundle exec rake -T | grep webpack:compile
