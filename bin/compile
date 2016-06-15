@@ -1,7 +1,10 @@
 #!/bin/bash
 # -*- shell-script -*-
 
-# Run the webpack-rails rake task.
+# Run the webpack-rails rake task `webpack:compile`.
+#
+# This compiles assets to `public/webpack` when using default
+# configuration.
 
 build_dir=$1
 cache_dir=$2
