@@ -8,4 +8,8 @@
 
 echo "webpack-rails"
 
-exit 0
+build_dir=$1
+
+cd $build_dir
+
+bundle exec rake -T | grep 'webpack:compile' >/dev/null
