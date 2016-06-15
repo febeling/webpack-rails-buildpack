@@ -10,6 +10,4 @@ echo "webpack-rails"
 
 build_dir=$1
 
-cd $build_dir
-
-bundle exec rake -T | grep 'webpack:compile' >/dev/null
+grep 'webpack-rails' < $build_dir/Gemfile > /dev/null
