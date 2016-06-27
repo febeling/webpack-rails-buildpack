@@ -5,12 +5,11 @@ A buildpack to support Heroku deployments with [webpack-rails](https://github.co
 ## Installation
 
 Add a custom buildpack to your to your applications Settings tab under
-Section Buildpacks by using the URL of this repository, instead of the
-short name of Heroku's own buildpacks. From the command line run:
+section Buildpacks by using the URL of this repository, instead of the
+short name of Heroku's own buildpacks. It goes alongside your Ruby and 
+Node buildpacks, placed in last position. From the command line run:
 
     heroku buildpacks:add https://github.com/febeling/webpack-rails-buildpack.git
-
-It can be in last position.
 
 ## Usage
 
