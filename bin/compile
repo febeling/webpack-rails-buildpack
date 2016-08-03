@@ -29,4 +29,4 @@ export_env_dir() {
 export_env_dir
 
 echo "-----> bundle exec rake webpack:compile"
-bundle exec rake webpack:compile
+bundle exec rake webpack:compile --trace
