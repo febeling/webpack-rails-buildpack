@@ -27,6 +27,9 @@ export_env_dir() {
 }
 
 export_env_dir
-
-echo "-----> bundle exec rake webpack:compile"
-bundle exec rake webpack:compile --trace
+echo "-----> gem install bundler"
+gem install bundler --no-ri --no-rdoc
+echo "-----> bundle install"
+bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
+echo "-----> bundle exec rails webpack:compile"
+RAILS_ENV=production bundle exec rails webpack:compile --trace
