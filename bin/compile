@@ -28,5 +28,9 @@ export_env_dir() {
 
 export_env_dir
 
+echo "-----> gem install bundler"
+gem install bundler
+echo "-----> bundle install"
+bundle install
 echo "-----> bundle exec rake webpack:compile"
 bundle exec rake webpack:compile --trace
