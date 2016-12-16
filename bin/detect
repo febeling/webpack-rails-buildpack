@@ -1,8 +1,8 @@
 #!/bin/sh
 # -*- shell-script -*-
 
-# Assume this project uses webpack-rails gem if it exposes the
-# "webpack:compile" Rake task.
+# Assume this project uses webpack-rails gem if it depends
+# on the webpack-rails gem (or just mentions it).
 #
 # `grep` will set the significant exit code accordingly.
 
