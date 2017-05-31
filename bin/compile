@@ -34,8 +34,8 @@ echo "-----> gem install bundler"
 gem install bundler --no-document
 echo "-----> bundle install"
 bundle install -j4 --deployment
-echo "-----> npm install --only=dev"
-npm install --only=dev
+echo "-----> npm install"
+npm install
 echo "-----> bundle exec rake webpack:compile"
 bundle exec rake webpack:compile --trace
 echo "-----> npm prune"
