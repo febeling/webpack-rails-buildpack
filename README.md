@@ -41,7 +41,7 @@ Projects that use yarn have
 a `yarn.lock` file, while those that use npm have a `package-lock.json`
 (or none if using an older version of `npm`).
 
-This buildpack will set the `YARN` environment variable accoringly, which 
+This buildpack will set the `YARN` environment variable accordingly, which 
 will make that the effective package manager for Javascript.
 
 ## Contributing
