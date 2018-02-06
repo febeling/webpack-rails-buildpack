@@ -33,15 +33,16 @@ On deployment, the buildpack runs the build command `bundle exec rake
 webpack:compile`. Under default configuration that will output the
 compiled assets under `public/webpack`.
 
-### Package manager
+### Package Manager
 
-Since heroku supports npm and yarn, the buildpack will detect which one to use,
-based on common approachs. Projects that use yarn as a package manager has
-a ```yarn-lock.json``` versioned and projects that use npm has a
-```package-lock.json``` or an older versions this last one is missing.
+Heroku supports both NPM and Yarn as a Javascript package managers, and this buildpack will 
+detect which one to use automatically, based on the persence of a version-lock file. 
+Projects that use yarn have
+a `yarn.lock` file, while those that use npm have a `package-lock.json`
+(or none if using an older version of `npm`).
 
-The buildpack when detects a ```yarn-lock.json``` will set a ```YARN``` and the
-commands will run through yarn.
+This buildpack will set the `YARN` environment variable accoringly, which 
+will make that the effective package manager for Javascript.
 
 ## Contributing
 
