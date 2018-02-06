@@ -8,7 +8,7 @@ A buildpack to support Heroku deployments with [webpack-rails](https://github.co
 
 Add a custom buildpack to your to your applications Settings tab under
 section Buildpacks by using the URL of this repository, instead of the
-short name of Heroku's own buildpacks. It goes alongside your Ruby and 
+short name of Heroku's own buildpacks. It goes alongside your Ruby and
 Node buildpacks, placed in last position.
 
 #### Heroku CLI
@@ -32,6 +32,16 @@ To add the Webpack Rails buildpack in the last index, run this command:
 On deployment, the buildpack runs the build command `bundle exec rake
 webpack:compile`. Under default configuration that will output the
 compiled assets under `public/webpack`.
+
+### Package manager
+
+Since heroku supports npm and yarn, the buildpack will detect which one to use,
+based on common approachs. Projects that use yarn as a package manager has
+a ```yarn-lock.json``` versioned and projects that use npm has a
+```package-lock.json``` or an older versions this last one is missing.
+
+The buildpack when detects a ```yarn-lock.json``` will set a ```YARN``` and the
+commands will run through yarn.
 
 ## Contributing
 
