@@ -35,7 +35,7 @@ compiled assets under `public/webpack`.
 
 ### Package Manager
 
-Heroku supports both NPM and Yarn as Javascript package managers, and this buildpack will 
+Heroku supports both NPM and Yarn as Javascript package managers. This buildpack will 
 detect which one to use automatically, based on the persence of a version-lock file. 
 Projects that use yarn have
 a `yarn.lock` file, while those that use npm have a `package-lock.json`
