@@ -60,7 +60,7 @@ fi
 echo "-----> bundle exec rake webpack:compile"
 bundle exec rake webpack:compile --trace
 
-if !$YARN; then
+if ! $YARN; then
   echo "-----> npm prune"
   npm prune
 fi
