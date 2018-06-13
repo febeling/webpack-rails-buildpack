@@ -4,12 +4,18 @@ A buildpack to support Heroku deployments with [webpack-rails](https://github.co
 
 ## Installation
 
+Note: webpack-rails gem is not longer maintained by its developer.
+
 #### Heroku Dashboard
 
 Add a custom buildpack to your to your applications Settings tab under
 section Buildpacks by using the URL of this repository, instead of the
 short name of Heroku's own buildpacks. It goes alongside your Ruby and
 Node buildpacks, placed in last position.
+
+After the release of registered buildpacks, it will be available under 
+the name `febeling/webpack-rails`, adhearing to the suggested naming
+conventions there.
 
 #### Heroku CLI
 
