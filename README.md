@@ -31,7 +31,7 @@ If they are added you should see:
 
 To add the Webpack Rails buildpack in the last index, run this command:
 
-    heroku buildpacks:add --index 3 https://github.com/febeling/webpack-rails-buildpack.git
+    heroku buildpacks:add --index 3 febeling/webpack-rails
 
 ## Usage
 
@@ -49,6 +49,12 @@ a `yarn.lock` file, while those that use npm have a `package-lock.json`
 
 This buildpack will set the `YARN` environment variable accordingly, which 
 will make that the effective package manager for Javascript.
+
+## Using the latest buildpack code
+
+The `febeling/webpack-rails` buildpack from the [Heroku Registry](https://devcenter.heroku.com/articles/buildpack-registry) contains the latest stable version of the buildpack. If you'd like to use the latest buildpack code from this Github repository, you can set your buildpack to the Github URL:
+
+    heroku buildpacks:add --index 3 https://github.com/febeling/webpack-rails-buildpack
 
 ## Contributing
 
