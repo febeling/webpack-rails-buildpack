@@ -14,6 +14,19 @@ env_dir=$3
 
 cd $build_dir
 
+if [ -f "$build_dir/yarn.lock" ]; then
+  YARN=true
+else
+  YARN=false
+fi
+
+detect_package_manager() {
+  case $YARN in
+    true) echo "yarn";;
+    *) echo "npm";;
+  esac
+}
+
 # This function loads the Heroku settings variables from the files in
 # `env_dir` and sets the up as environment variables.
 export_env_dir() {
@@ -32,11 +45,22 @@ export_env_dir
 
 echo "-----> gem install bundler"
 gem install bundler --no-document
+
 echo "-----> bundle install"
 bundle install -j4 --deployment
-echo "-----> npm install"
-npm install
+
+echo "-----> " detect_package_manager " install"
+
+if $YARN; then
+  yarn install
+else
+  npm install
+fi
+
 echo "-----> bundle exec rake webpack:compile"
 bundle exec rake webpack:compile --trace
-echo "-----> npm prune"
-npm prune
+
+if ! $YARN; then
+  echo "-----> npm prune"
+  npm prune
+fi

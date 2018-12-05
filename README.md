@@ -4,12 +4,18 @@ A buildpack to support Heroku deployments with [webpack-rails](https://github.co
 
 ## Installation
 
+Note: webpack-rails gem is not longer maintained by its developer.
+
 #### Heroku Dashboard
 
 Add a custom buildpack to your to your applications Settings tab under
 section Buildpacks by using the URL of this repository, instead of the
-short name of Heroku's own buildpacks. It goes alongside your Ruby and 
+short name of Heroku's own buildpacks. It goes alongside your Ruby and
 Node buildpacks, placed in last position.
+
+After the release of registered buildpacks, it will be available under 
+the name `febeling/webpack-rails`, adhearing to the suggested naming
+conventions there.
 
 #### Heroku CLI
 
@@ -25,13 +31,30 @@ If they are added you should see:
 
 To add the Webpack Rails buildpack in the last index, run this command:
 
-    heroku buildpacks:add --index 3 https://github.com/febeling/webpack-rails-buildpack.git
+    heroku buildpacks:add --index 3 febeling/webpack-rails
 
 ## Usage
 
 On deployment, the buildpack runs the build command `bundle exec rake
 webpack:compile`. Under default configuration that will output the
 compiled assets under `public/webpack`.
+
+### Package Manager
+
+Heroku supports both NPM and Yarn as Javascript package managers. This buildpack will 
+detect which one to use automatically, based on the persence of a version-lock file. 
+Projects that use yarn have
+a `yarn.lock` file, while those that use npm have a `package-lock.json`
+(or none if using an older version of `npm`).
+
+This buildpack will set the `YARN` environment variable accordingly, which 
+will make that the effective package manager for Javascript.
+
+## Using the latest buildpack code
+
+The `febeling/webpack-rails` buildpack from the [Heroku Registry](https://devcenter.heroku.com/articles/buildpack-registry) contains the latest stable version of the buildpack. If you'd like to use the latest buildpack code from this Github repository, you can set your buildpack to the Github URL:
+
+    heroku buildpacks:add --index 3 https://github.com/febeling/webpack-rails-buildpack
 
 ## Contributing
 
