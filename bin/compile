@@ -44,7 +44,7 @@ export_env_dir() {
 export_env_dir
 
 echo "-----> gem install bundler"
-gem install bundler --no-document
+gem install bundler --no-document -v 1.17.3
 
 echo "-----> bundle install"
 bundle install -j4 --deployment
