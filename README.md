@@ -1,5 +1,7 @@
 # webpack-rails-buildpack
 
+Heroku buildpack name: __febeling/webpack-rails__
+
 A buildpack to support Heroku deployments with [webpack-rails](https://github.com/mipearson/webpack-rails).
 
 ## Installation
