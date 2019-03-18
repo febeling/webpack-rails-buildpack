@@ -4,9 +4,10 @@ A buildpack to support Heroku deployments for applications using [webpack-rails]
 
 Name on [Heroku's buildpack registry](https://devcenter.heroku.com/articles/buildpack-registry): __febeling/webpack-rails__
 
-## Installation
+_Note: Now that Rails (>= 5.1) has the webpacker gem there are few reasons to use this buildpack. 
+The default Heroku Ruby buildpack can handle webpacker, too._
 
-Note: webpack-rails gem is not longer maintained by its developer.
+## Installation
 
 #### Heroku Dashboard
 
